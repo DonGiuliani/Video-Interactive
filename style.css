@@ -1,0 +1,70 @@
+html {
+    background-color: black;
+}
+
+body::-webkit-scrollbar {
+    width: 0px;
+}
+  
+body::-webkit-scrollbar-track {
+    background: black;
+}
+
+#container {
+    margin: 0;
+    padding: 0;
+}
+
+video {
+    width: 100%;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.active {
+    display: flex;
+}
+
+.inactive {
+    display: none;
+}
+
+.bouton__gauche, .bouton__droite, .bouton__centre {
+    position: absolute;
+    max-width: 300px;
+    top: 350px;
+    color: white;
+    border-radius: 10px;
+    font-size: 2em;
+    font-family: "Special Elite", arial, sans-serif;
+    border: white solid 4px;
+    background-color: rgba(80, 80, 80, .75);
+    padding: 1em;
+    transition-duration: 0.2s;
+    animation: fadein 0.75s
+}
+
+.bouton__gauche:hover, .bouton__droite:hover, .bouton__centre:hover {
+    background-color: rgba(50, 50, 50, .75);
+    max-width: 320px;
+    padding: 1.1em;
+    font-size: 2.1em;
+    transition-duration: 0.2s;
+}
+
+.bouton__gauche {
+    left: 300px;
+}
+
+.bouton__droite {
+    right: 300px;
+}
+
+.bouton__centre {
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

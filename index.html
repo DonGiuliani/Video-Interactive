@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css" />
+        <style>@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');</style>
+        <title>Video Interactive</title>
+    </head>
+    <body>
+        <main>
+            <section id="container">
+                <video controls id="video" autoplay=true src="Videos/video1.mp4">
+                </video>
+
+                <button id="bouton1" class="bouton__gauche inactive"></button>
+                <button id="bouton2" class="bouton__droite inactive"></button>
+                <button id="bouton3" class="bouton__centre inactive"></button>
+            </section>
+        </main>
+        <script src="controller.js"></script>
+        <script src="ViewVideo.js"></script>
+        <script src="router.js"></script>
+    </body>
+</html>
