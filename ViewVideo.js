@@ -6,31 +6,19 @@ class ViewVideo {
     createButtons(choix1, choix2, choix3) {
         let video = document.getElementById("video")
 
-        video.addEventListener("ended", function() {
-            if(choix1 !== "") {
-                let bouton1 = document.getElementById("bouton1")
-                bouton1.innerHTML = choix1
-                bouton1.setAttribute("value", choix1)
-                bouton1.classList.replace("inactive", "active")
-                this.interactWithButtons(bouton1)
-            }
-
-            if(choix2 !== "") {
-                let bouton2 = document.getElementById("bouton2")
-                bouton2.innerHTML = choix2
-                bouton2.setAttribute("value", choix2)
-                bouton2.classList.replace("inactive", "active")
-                this.interactWithButtons(bouton2)
-            }
-
-            if(choix3 !== "") {
-                let bouton3 = document.getElementById("bouton3")
-                bouton3.innerHTML = choix3
-                bouton3.setAttribute("value", choix3)
-                bouton3.classList.replace("inactive", "active")
-                this.interactWithButtons(bouton3)
-            }
-        }.bind(this))
+        video.addEventListener("ended", function () {
+            [choix1, choix2, choix3].map((choice, key) => {
+              let btn = document.getElementById(`bouton${key + 1}`);
+              btn.innerHTML = choice;
+              btn.setAttribute('value', choice);
+              if (choice) {
+                btn.classList.replace('inactive', 'active');
+                this.interactWithButtons(btn);
+              } else {
+                btn.classList.replace('active', 'inactive');
+              }
+            });
+          }.bind(this));
         console.log(video);
     }
 
